@@ -42,16 +42,38 @@ Assignment Goal1: Assignment: Duel1
             var f1 = Math.floor(Math.random()*(player1Damage-minDamage1)+minDamage1);
             var f2 = Math.floor(Math.random()*(player2Damage-minDamage2)+minDamage2);
 
-            console.log(f1);
-            console.log(f2);
+            //console.log(f1);
+            //console.log(f2);
 
+            //inflict damage
+            playerOneHealth-=f1;
+            playerTwoHealth-=f2;
 
+            //console.log(playerOneHealth);
+            //console.log(playerTwoHealth);
+
+            console.log(playerOneName+":"+playerOneHealth+" "+playerTwoName+":"+playerTwoHealth);
+
+            var results = winnerCheck();
+            console.log(results);
 
         };
     };
 
     function winnerCheck(){
+        console.log("in winnerCheck FN");
+
+        var result="no winner";
+
+        if(playerOneHealth<1 && playerTwoHealth<1){
+            result = "You Both Die";
+        }else if(playerOneHealth<1){
+            result =playerTwoName+"WINS!!!"
+        }else if(playerTwoHealth<1){
+            result =playerOneName+"WINS!!!"
+        };
         //code will go here
+        return result;
     };
 
     /************ program starts here*************/

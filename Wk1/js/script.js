@@ -59,7 +59,7 @@ Assignment Goal1: Assignment: Duel1
 
             if(results === "no winner"){
                 round++;
-                console.log(playerOneName+":"+playerOneHealth+" *ROUND"+round+" Over* "+playerTwoName+":"+playerTwoHealth);
+                alert(playerOneName+":"+playerOneHealth+" *ROUND"+round+" Over* "+playerTwoName+":"+playerTwoHealth);
             }else{
                 alert(results);
                 break;
@@ -75,10 +75,10 @@ Assignment Goal1: Assignment: Duel1
 
         if(playerOneHealth<1 && playerTwoHealth<1){
             result = "You Both Die";
-        }else if(playerOneHealth<1){
-            result =playerTwoName+" WINS!!!"
-        }else if(playerTwoHealth<1){
-            result =playerOneName+" WINS!!!"
+        }else if(playerOneHealth < 1){
+            result = playerTwoName+" WINS!!!"
+        }else if(playerTwoHealth < 1){
+            result = playerOneName+" WINS!!!"
         };
         //code will go here
         return result;

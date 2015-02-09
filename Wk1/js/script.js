@@ -25,7 +25,7 @@ Assignment Goal1: Assignment: Duel1
     var playerTwoHealth = 100;
 
     //rounds
-    var round = 1;
+    var round = 0;
 
     function fight(){
         //code will go here
@@ -33,7 +33,7 @@ Assignment Goal1: Assignment: Duel1
 
         alert(playerOneName+":"+playerOneHealth+" *START* "+playerTwoName+":"+playerTwoHealth);
 
-        for(var i=0; i< 10; i++){
+        for(var i=0; i < 10; i++){
 
             //random formula is - Math.floor(Math.random() * (max - min) + min);
 
@@ -57,6 +57,14 @@ Assignment Goal1: Assignment: Duel1
             var results = winnerCheck();
             console.log(results);
 
+            if(results === "no winner"){
+                round++;
+                console.log(playerOneName+":"+playerOneHealth+" *ROUND"+round+" Over* "+playerTwoName+":"+playerTwoHealth);
+            }else{
+                alert(results);
+                break;
+            };
+
         };
     };
 
@@ -68,9 +76,9 @@ Assignment Goal1: Assignment: Duel1
         if(playerOneHealth<1 && playerTwoHealth<1){
             result = "You Both Die";
         }else if(playerOneHealth<1){
-            result =playerTwoName+"WINS!!!"
+            result =playerTwoName+" WINS!!!"
         }else if(playerTwoHealth<1){
-            result =playerOneName+"WINS!!!"
+            result =playerOneName+" WINS!!!"
         };
         //code will go here
         return result;

@@ -53,67 +53,67 @@
 			
 			// loop through the user's search query words
 			// save a lowercase variable of the search keyword
-			for(var ii=0, jj=queryArray.length; ii<jj; ii++){  //Create for loop
-				var qitem = queryArray[ii].tolowercase();
+			for(var ii=0, jj=queryArray.length; ii<jj; ii++){  //Create for loop to go through users search
+				var qitem = queryArray[ii].tolowercase();      //Create variable to account for lowercase in user search
 				
 				// is the keyword anywhere in the video title?
 				// If a match is found, push full db[i] into results array
-				var compare = dbitem.indexOf(qitem);
-				if(compare !== -1){
-					results.push(db[i]);
+				var compare = dbitem.indexOf(qitem);           //Create variable to account for search and database match
+				if(compare !== -1){                            //Check if there is a match
+					results.push(db[i]);                       //If there is a match results are pushed into the array as a option
 				};
 			;
 		;
 		
-		results.sort();
+		results.sort();                                        //Calls the results function and sorts it
 		
 		// Check that matches were found, and run output functions
-		if(results.length = 0){
-			noMatch();
-		}else{
-			showMatches(results);
+		if(results.length = 0){                               //Set if statement for results. If no results
+			noMatch();                                        //Search alerts user there is no match
+		}else{                                                //If there is a result
+			showMatches(results);                             //Set alert to show results
 		};
 	};
 	
 	// Put "No Results" message into page (DO NOT FIX THE HTML VAR NOR THE innerHTML)
-	var noMatch = function(){
-		var html = ''+
-			'<p>No Results found.</p>'+
-			'<p style="font-size:10px;">Try searching for "JavaScript".  Just an idea.</p>'
+	var noMatch = function(){                                 //Set variable for no match
+		var html = ''+                                        //Set variable for HTML that provides user feedback
+			'<p>No Results found.</p>'+                       //Lets user know, no results found
+			'<p style="font-size:10px;">Try searching for "JavaScript".  Just an idea.</p>'  //Provides user a suggestion for their search
 		;
-		resultsDIV.innerHTML = html;
+		resultsDIV.innerHTML = html;                          //calls original dom element for search results and also variable for HTML for user feedback
 	};
 	
 	// Put matches into page as paragraphs with anchors
-	var showMatches = function(results){
+	var showMatches = function(results){                      //Set variable for matches, to call function that shows results
 		
 		// THE NEXT 4 LINES ARE CORRECT.
-		var html = '<p>Results</p>', 
-			title, 
+		var html = '<p>Results</p>',                         //If correct html adjust to show the results of search
+			title,                                           //Title and Url should also be provided or linked to
 			url
 		;
 		
 		// loop through all the results search() function
-		for(var i=0, j=results.length; i<j; i++){
+		for(var i=0, j=results.length; i<j; i++){            //Set loop to go through results function
 		
 			// title of video ends with pipe
 			// pull the title's string using index numbers
-			titleEnd = results[i].indexOf('|');
-			title = results[i].subString(0, titleEnd);
+			titleEnd = results[i].indexOf('|');              //If the title and index array match
+			title = results[i].subString(0, titleEnd);       //Search results are provided
 			
 			// pull the video url after the title
-			url = results[i].substring(results[i].indexOf('|')+1, results[i].length);
+			url = results[i].substring(results[i].indexOf('|')+1, results[i].length);  // After title matches, video url is provided
 			
 			// make the video link - THE NEXT LINE IS CORRECT.
-			html += '<p><a href=' + url + '>' + title + '</a></p>';
+			html += '<p><a href=' + url + '>' + title + '</a></p>';    //Video is available to user
 		};
-		resultsDIV.innerHTML = html; //THIS LINE IS CORRECT.
+		resultsDIV.innerHTML = html; //THIS LINE IS CORRECT. //if video is found information and links are all provided in HTML page
 	};
 	
 	// The onsubmit event will be reviewed in upcoming Course Material.
 	// THE LINE DIRECTLY BELOW IS CORRECT
-	document.forms[0].onsubmit = function(){
-		var query = searchInput.value;
+	document.forms[0].onsubmit = function(){  //From the search the document is pulled the matches the search
+		var query = searchInput.value;        //Variable call for search to check for match
 		validqte(query);
 
         // return false is needed for most events - this will be reviewed in upcoming course material

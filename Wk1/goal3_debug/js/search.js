@@ -1,6 +1,6 @@
 //William Carey
-
-
+//2.8.2015
+//Assignment Debug: Assignment: Debug
 
 // Create privatized scope using a self-executing function
 (function(){

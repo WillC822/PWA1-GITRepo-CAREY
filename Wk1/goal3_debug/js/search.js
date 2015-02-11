@@ -4,7 +4,7 @@
 
 // Create privatized scope using a self-executing function
 (function(){
-	
+
 	// Variable initialization (DO NOT FIX ANY OF THE BELOW VAR's)
 	var resultsDIV = document.getElementById("results"),  //Declare Dom element for search results
 		searchInput = document.forms[0].search,           //Declare Dom element for search Input
@@ -12,15 +12,15 @@
 	;
 	
 	// Validates search query
-	var validqte == function(query){                      //Assign an anonymous function to var validate
+	var validate = function(query){                      //Assign an anonymous function to var validate --Fixed error
 		
 		// Trim whitespace from start and end of search query
 		while(query.charAt(0) = " "){                     //Start a while loop to see if the search is empty
 			query = query.substring(1, query.length);     //
 		};
-		while(query.charAt(query.length-1) === ""){
-			query = query.substring(0, query.length-1);
-		;
+		while(query.charAt(query.length-1) === "") {
+            query = query.substring(0, query.length - 1);
+        };  //Fixed error, closure error, added curly brace
 		
 		// Check search length, must have 3 characters
 		if(query.length < 3){                             //Add if statement if search isn't long enough
@@ -35,7 +35,8 @@
 	};
 	
 	// Finds search matches
-	var search = function(query);                          //Declare variable to call function for search
+	var search = function(query){                          //Declare variable to call function for search  -- Fixed error by adding open curly brackets
+
 		
 		// split the user's search query string into an array
 		var queryArray = query.join(" ");                  //Declare variable to make users search fall into an array
@@ -44,27 +45,27 @@
 		var results = [];                                  //Declare variable that finds results from database.js
 
 		// loop through each index of db array
-		for(var i=0, j=db.length; i<j; i++){               //create a for loop to search through the array of saved
-		
-			// each db[i] is a single video item, each title ends with a pipe "|"
-			// save a lowercase variable of the video title
-			var dbTitleEnd = db[i].indexOf('|');           //Set variable to account for all titles in database in Uppercase o
-			var dbitem = db[i].tolowercase().substring(0, dbTitleEnd); // Set variable to account for all titles in Lowercase
-			
-			// loop through the user's search query words
-			// save a lowercase variable of the search keyword
-			for(var ii=0, jj=queryArray.length; ii<jj; ii++){  //Create for loop to go through users search
-				var qitem = queryArray[ii].tolowercase();      //Create variable to account for lowercase in user search
-				
-				// is the keyword anywhere in the video title?
-				// If a match is found, push full db[i] into results array
-				var compare = dbitem.indexOf(qitem);           //Create variable to account for search and database match
-				if(compare !== -1){                            //Check if there is a match
-					results.push(db[i]);                       //If there is a match results are pushed into the array as a option
-				};
-			;
-		;
-		
+		for(var i=0, j=db.length; i<j; i++) {               //create a for loop to search through the array of saved
+
+            // each db[i] is a single video item, each title ends with a pipe "|"
+            // save a lowercase variable of the video title
+            var dbTitleEnd = db[i].indexOf('|');           //Set variable to account for all titles in database in Uppercase o
+            var dbitem = db[i].tolowercase().substring(0, dbTitleEnd); // Set variable to account for all titles in Lowercase
+
+            // loop through the user's search query words
+            // save a lowercase variable of the search keyword
+            for (var ii = 0, jj = queryArray.length; ii < jj; ii++) {  //Create for loop to go through users search
+                var qitem = queryArray[ii].tolowercase();      //Create variable to account for lowercase in user search
+
+                // is the keyword anywhere in the video title?
+                // If a match is found, push full db[i] into results array
+                var compare = dbitem.indexOf(qitem);           //Create variable to account for search and database match
+                if (compare !== -1) {                            //Check if there is a match
+                    results.push(db[i]);                       //If there is a match results are pushed into the array as a option
+                };  //Fixed error, closure error, added curly brace
+            };    //Fixed error, closure error, added curly brace
+        };     //Fixed error, closure error, added curly brace
+
 		results.sort();                                        //Calls the results function and sorts it
 		
 		// Check that matches were found, and run output functions
@@ -112,13 +113,13 @@
 	
 	// The onsubmit event will be reviewed in upcoming Course Material.
 	// THE LINE DIRECTLY BELOW IS CORRECT
-	document.forms[0].onsubmit = function(){  //From the search the document is pulled the matches the search
-		var query = searchInput.value;        //Variable call for search to check for match
-		validqte(query);
+	document.forms[0].onsubmit = function() {  //From the search the document is pulled the matches the search
+        var query = searchInput.value;        //Variable call for search to check for match
+        validqte(query);
 
         // return false is needed for most events - this will be reviewed in upcoming course material
         // THE LINE DIRECTLY BELOW IS CORRECT
-		return false;   // cancels the original search
-	;
+        return false;   // cancels the original search
+    };  //Fixed error, closure error, added curly brace
 
 })();

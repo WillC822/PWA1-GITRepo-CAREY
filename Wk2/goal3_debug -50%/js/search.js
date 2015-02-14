@@ -1,5 +1,5 @@
 //William Carey
-//2.8.2015
+//2.13.2015
 //Assignment Debug: Assignment: Debug
 
 // Create privatized scope using a self-executing function
@@ -15,7 +15,7 @@
 	var validate = function(query){                      //Assign an anonymous function to var validate --Fixed error
 
 		// Trim whitespace from start and end of search query
-		while(query.charAt(0) === " "){                     //Start a while loop to see if the search is empty
+		while(query.charAt(0) === " "){                     //Start a while loop to see if the search is empty  -- Fixed error switched = with === to show comparison
 			query = query.substring(1, query.length);     //
 		};
 		while(query.charAt(query.length-1) === "") {

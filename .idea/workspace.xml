@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="edd46e61-4fd4-419c-85c6-7b426b164a88" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Wk2/goal3_debug -50%/js/database.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Wk2/goal3_debug -50%/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Wk2/goal3_debug -50%/js/search.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Wk2/goal3_debug -50%/style.css" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Wk2/goal1_duel1/css/style.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Wk2/goal1_duel1/images/fight_bg.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Wk2/goal1_duel1/images/grey_wash_wall.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Wk2/goal1_duel1/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Wk2/goal1_duel1/js/script.js" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Wk2/goal3_debug -50%/js/search.js" afterPath="$PROJECT_DIR$/Wk2/goal3_debug -50%/js/search.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="PWA1-GITRepo-CAREY.iws" />
@@ -62,11 +54,11 @@
           <file leaf-file-name="search.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Wk2/goal3_debug -50%/js/search.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.58352405" vertical-offset="0" max-vertical-offset="1950">
-                  <caret line="17" column="25" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
+                <state vertical-scroll-proportion="0.65217394" vertical-offset="0" max-vertical-offset="1950">
+                  <caret line="19" column="10" selection-start-line="19" selection-start-column="10" selection-end-line="19" selection-end-column="10" />
                   <folding>
                     <element signature="n#!!doc" expanded="true" />
-                    <marker date="1423879543000" expanded="true" signature="4411:4426" placeholder="..." />
+                    <marker date="1423883313000" expanded="true" signature="4411:4426" placeholder="..." />
                   </folding>
                 </state>
               </provider>
@@ -121,8 +113,8 @@
           <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Wk2/goal3_debug -50%/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.7371007" vertical-offset="135" max-vertical-offset="555">
-                  <caret line="29" column="7" selection-start-line="29" selection-start-column="7" selection-end-line="29" selection-end-column="7" />
+                <state vertical-scroll-proportion="0.62653565" vertical-offset="135" max-vertical-offset="555">
+                  <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -608,14 +600,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Wk2/goal3_debug -50%/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7371007" vertical-offset="135" max-vertical-offset="555">
-          <caret line="29" column="7" selection-start-line="29" selection-start-column="7" selection-end-line="29" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Wk2/goal3_debug -50%/js/database.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="437">
@@ -624,13 +608,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Wk2/goal3_debug -50%/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.62653565" vertical-offset="135" max-vertical-offset="555">
+          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Wk2/goal3_debug -50%/js/search.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.58352405" vertical-offset="0" max-vertical-offset="1950">
-          <caret line="17" column="25" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
+        <state vertical-scroll-proportion="0.65217394" vertical-offset="0" max-vertical-offset="1950">
+          <caret line="19" column="10" selection-start-line="19" selection-start-column="10" selection-end-line="19" selection-end-column="10" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
-            <marker date="1423879543000" expanded="true" signature="4411:4426" placeholder="..." />
+            <marker date="1423883313000" expanded="true" signature="4411:4426" placeholder="..." />
           </folding>
         </state>
       </provider>

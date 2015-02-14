@@ -13,9 +13,9 @@
 	
 	// Validates search query
 	var validate = function(query){                      //Assign an anonymous function to var validate --Fixed error
-		
+
 		// Trim whitespace from start and end of search query
-		while(query.charAt(0) = " "){                     //Start a while loop to see if the search is empty
+		while(query.charAt(0) === " "){                     //Start a while loop to see if the search is empty
 			query = query.substring(1, query.length);     //
 		};
 		while(query.charAt(query.length-1) === "") {

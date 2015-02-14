@@ -4,14 +4,14 @@
 /*
 William Carey
 2.8.2015
-Assignment Goal1: Assignment: Duel1
+Assignment: Develop Duel2
  */
 
 // Self Executing function
 (function(){
 
     console.log("FIGHT!!!");  //Comment: Display to browser console "FIGHT!!!"
-
+/*
     //player name
     var playerOneName = "Spiderman";  //Declare the variable for player One
     var playerTwoName = "Dr Octopus"; //Declare the variable for player Two
@@ -23,6 +23,10 @@ Assignment Goal1: Assignment: Duel1
     //player health
     var playerOneHealth = 100;   //Declare variable for beginning health for Fighter One
     var playerTwoHealth = 100;   //Declare variable for beginning health for Fighter Two
+*/
+    //create the above in array form
+    var fighter1 = ['SpiderMan',20,100];  //Formed array for fighter 1 name, damage and health
+    var fighter2 = ['Dr Octopus',20,100]; //Formed array for fighter 2 name, damage and health
 
     //rounds
     var round = 0;  //Declare variable for the rounds of the fight
@@ -31,36 +35,35 @@ Assignment Goal1: Assignment: Duel1
         //code will go here
         console.log('in the fight function');  //Comment: Display to browser to show reading from function
 
-        alert(playerOneName+":"+playerOneHealth+" *START* "+playerTwoName+":"+playerTwoHealth); //Alert to show status of fight
+        alert(fighter1[0]+":"+fighter1[2]+" *START* "+fighter2[0]+":"+fighter2[2]); //Used array index to get fighter name and fighter health
 
         for(var i=0; i < 10; i++){  //Create loop to increase of rounds
 
             //random formula is - Math.floor(Math.random() * (max - min) + min);
 
-            var minDamage1 = player1Damage * .5; //Declare Variable to allow for code to function for decreasing player one damage
-            var minDamage2 = player2Damage * .5; //Declare Variable to allow for code to function for decreasing player two damage
-            var f1 = Math.floor(Math.random()*(player1Damage-minDamage1)+minDamage1); //Declare Variable to randomize damage and to calculate amount left to player one
-            var f2 = Math.floor(Math.random()*(player2Damage-minDamage2)+minDamage2); //Declare Variable to randomize damage and to calculate amount left to player two
+            var minDamage1 = fighter1[1] * .5; //Declare Variable to allow for code to function for decreasing player one damage using array index
+            var minDamage2 = fighter2[1] * .5; //Declare Variable to allow for code to function for decreasing player two damage using array index
+            var f1 = Math.floor(Math.random()*(fighter1[1]-minDamage1)+minDamage1); //Declare Variable to randomize damage and to calculate amount left to player one using array index
+            var f2 = Math.floor(Math.random()*(fighter2[1]-minDamage2)+minDamage2); //Declare Variable to randomize damage and to calculate amount left to player two using array index
 
             //console.log(f1);
             //console.log(f2);
 
             //inflict damage
-            playerOneHealth-=f1; //Call to make player one inflict damage
-            playerTwoHealth-=f2; //Call to make player two inflict damage
+            fighter1[2]-=f1; //Call to make player one inflict damage
+            fighter2[2]-=f2; //Call to make player two inflict damage
 
             //console.log(playerOneHealth);
             //console.log(playerTwoHealth);
 
-            console.log(playerOneName+":"+playerOneHealth+" "+playerTwoName+":"+playerTwoHealth); //Comment to console to show players names and health
+            console.log(fighter1[0]+":"+fighter1[2]+" "+fighter2[0]+":"+fighter2[2]); //Changed comment to show array to console to show players names and health
 
             var results = winnerCheck(); //Declare Variable to check for winner
             console.log(results); //Comment: Display results to console
 
             if(results === "no winner"){  // If the results are equal display no winner
                 round++; // advance round
-                alert(playerOneName+":"+playerOneHealth+" *ROUND"+round+" Over* "+playerTwoName+":"+playerTwoHealth); //Alert to show players health and round progression
-            }else{
+                alert(fighter1[0]+":"+fighter1[2]+" *ROUND" +round+" Over* "+fighter2[0]+":"+fighter2[2]);
                 alert(results); //display fight results
                 break; //stop function
             };
@@ -73,12 +76,12 @@ Assignment Goal1: Assignment: Duel1
 
         var result="no winner";
 
-        if(playerOneHealth<1 && playerTwoHealth<1){  //If players one and player two health is less than 1, display you both die
+        if(fighter1[2]<1 && fighter2[2]<1){  //If players one and player two health is less than 1, display you both die
             result = "You Both Die";
-        }else if(playerOneHealth < 1){ //if players one health is less than one, show player two as winner
-            result = playerTwoName+" WINS!!!"
-        }else if(playerTwoHealth < 1){ //if players two health is less than one, show player one as winner
-            result = playerOneName+" WINS!!!"
+        }else if(fighter1[2] < 1){ //if players one health is less than one, show player two as winner
+            result = fighter2[0]+" WINS!!!"
+        }else if(fighter2[2]< 1){ //if players two health is less than one, show player one as winner
+            result = fighter1[0] +" WINS!!!"
         };
         //code will go here
         return result;  // Shows results of match.

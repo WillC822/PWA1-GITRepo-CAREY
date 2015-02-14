@@ -60,12 +60,13 @@ Assignment: Develop Duel2
 
             var results = winnerCheck(); //Declare Variable to check for winner
             console.log(results); //Comment: Display results to console
+            alert(results); //added alert to show results of fight
 
             if(results === "no winner"){  // If the results are equal display no winner
                 round++; // advance round
                 alert(fighter1[0]+":"+fighter1[2]+" *ROUND" +round+" Over* "+fighter2[0]+":"+fighter2[2]);
                 alert(results); //display fight results
-                break; //stop function
+                //break; //stop function   --- closed break to allow function to run
             };
 
         };

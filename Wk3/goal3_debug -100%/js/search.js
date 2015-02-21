@@ -1,5 +1,5 @@
 //William Carey
-//2.13.2015
+//2.20.2015
 //Assignment Debug: Assignment: Debug
 
 // Create privatized scope using a self-executing function
@@ -39,7 +39,7 @@
 
 		
 		// split the user's search query string into an array
-		var queryArray = query.split(" ");                  //Declare variable to make users search fall into an array  - Fixed error from join to split
+		var queryArray = query.split(" ");                  //Declare variable to make users search fall into an array - fixed error switched join to split.
 		
 		// array to store matched results from database.js
 		var results = [];                                  //Declare variable that finds results from database.js
@@ -50,12 +50,12 @@
             // each db[i] is a single video item, each title ends with a pipe "|"
             // save a lowercase variable of the video title
             var dbTitleEnd = db[i].indexOf('|');           //Set variable to account for all titles in database in Uppercase o
-            var dbitem = db[i].tolowercase().substring(0, dbTitleEnd); // Set variable to account for all titles in Lowercase
+            var dbitem = db[i].toLowerCase().substring(0, dbTitleEnd); // Set variable to account for all titles in Lowercase  -Fixed Error, camel casing incorrect on Lowercase
 
             // loop through the user's search query words
             // save a lowercase variable of the search keyword
             for (var ii = 0, jj = queryArray.length; ii < jj; ii++) {  //Create for loop to go through users search
-                var qitem = queryArray[ii].toLowercase();      //Create variable to account for lowercase in user search - Fixed error, added camelCasing to
+                var qitem = queryArray[ii].toLowerCase();      //Create variable to account for lowercase in user search
 
                 // is the keyword anywhere in the video title?
                 // If a match is found, push full db[i] into results array
@@ -69,7 +69,7 @@
 		results.sort();                                        //Calls the results function and sorts it
 		
 		// Check that matches were found, and run output functions
-		if(results.length = 0){                               //Set if statement for results. If no results
+		if(results.length === 0){                               //Set if statement for results. If no results   - in comparing a single = shouldn't be used, changed to 3x's =
 			noMatch();                                        //Search alerts user there is no match
 		}else{                                                //If there is a result
 			showMatches(results);                             //Set alert to show results
@@ -95,12 +95,12 @@
 		;
 		
 		// loop through all the results search() function
-		for(var i=0, j=results.length; i<j; i++){            //Set loop to go through results function
+		for(var i=0, j=results.length; i<j; i++){            //Set loop to go through results function    - set = to === to account for different options
 		
 			// title of video ends with pipe
 			// pull the title's string using index numbers
 			titleEnd = results[i].indexOf('|');              //If the title and index array match
-			title = results[i].subString(0, titleEnd);       //Search results are provided
+			title = results[i].substring(0, titleEnd);       //Search results are provided     -- fixed error substring needs no camel casing
 			
 			// pull the video url after the title
 			url = results[i].substring(results[i].indexOf('|')+1, results[i].length);  // After title matches, video url is provided

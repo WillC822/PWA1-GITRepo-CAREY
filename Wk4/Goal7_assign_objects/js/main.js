@@ -1,7 +1,11 @@
 /**
- * William Carey
+ * Created by the JavaScript Development Team
  * Class: PWA
  * Goal: Goal7
+ *
+ * William Carey
+ * 2.25.15
+ * Goal 7 Assign Objects
  */
 
 (function(){

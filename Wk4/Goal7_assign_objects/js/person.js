@@ -17,7 +17,7 @@
     window.Person=Person;
 
     //defines all jobs and actions that can be selected
-    Person.jobs = ['Driver','Singer','Photographer','Assistant'];
+    Person.jobs = ['Driver','Singer','Photographer','Assistant','Teacher'];
     Person.actions = ['Sleep', 'Working', 'Eating'];
 
     //function created to cycle through actions, names, jobs so that they are all random
@@ -39,7 +39,7 @@
         id.innerHTML=this.action;
     }
 
-    //Prototype runs and ranomizes actions, jobs and persons randomly at a set interval
+    //Prototype runs and randomizes actions, jobs and persons randomly at a set interval
     Person.prototype.updates = function(){
         if (Math.floor(Math.random() <.01)){
             var i = Math.floor(Math.random()*Person.actions.length);

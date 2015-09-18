@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<!--William Carey
+	9.16.15
+    1509
+-->
+<html>
+<head>
+<title>Weather API App</title>
+  
+<link href="style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+<div id="container">
+  <header> 
+      <h1>Weather Forecast</h1>
+  </header>
+  
+  <div>
+  
+    <h2>Current Conditions</h2>
+      <p>
+      <!--  1. Display the icon for the current conditions (observation)
+      		2. Display weather
+            3. Display temperature in Ferinheiths
+            4. Display feels like temperature
+            5. Display relative humidity
+            6. Display wind direction
+            7. Display wind miles per hour
+      -->
+      <script>
+
+      /* ------ */
+      /* Request Current Condition Data */
+
+        $.ajax({
+            url:"http://api.wunderground.com/api/1ea8719a6deca0d3/forecast/geolookup/conditions/q/FL/Orlando.json",
+            dataType:"jsonp"
+            success : function(parsed_json) {
+              var icon = parsed_json['icon'];
+              var weather = parsed_json['current_observation']['weather'];
+              var temp_f = parsed_json['current_observation']['temp_f'];
+              var feelslike_f = parsed_json['current_observation']['feelslike_f'];
+              var humidity = parsed_json['current_observation']['relative_humidity'];
+              var wind_dir = parsed_json['current_observation']['wind_dir'];
+              var wind_mph = parsed_json['current_observation']['wind_mph'];
+
+              $("#current_left_1").append("<img src='http://icons.wxug.com/i/c/k/" + icon + ".gif' alt='weather icon'/>");
+
+            }
+        });  
+
+
+
+
+      </script>
+
+
+
+      </p>
+
+  
+  
+    <h2>Your Hourly 1-day forecast</h2>
+      <p>
+      <!--  1. Display the Hourly 1-day forecast 
+      		2. Display the condition for each hour
+            3. Display the temperature for each hour
+      -->
+      </p>
+  
+    <h2>Your 7-day forecast</h2>
+      <p>
+      <!--	1. Display the 7-day forecast 
+      		2. Display the icon
+      		3. Display weather
+            4. Display highs
+            5. Display lows
+            6. Display conditions
+      -->
+      </p>
+
+  
+</div><!--Closes Container-->
+
+    
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    
+
+
+  <script>
+
+    <!--This is an example. Use your own API key and city location.  Copy and paste the url in your browser. It will display the needed information in a JSON file.  Use the keys to display the information on your page-->	
+	
+    //	$.ajax({                             
+    //		url : "http://api.wunderground.com/api/YourAPIKeyHere/forecast/geolookup/conditions/q/MD/Baltimore.json",
+    //		dataType : "json", 
+    //          success : function(parsed_json) { 
+    //              var location = parsed_json['location']['city']; 
+    //              var temp_f = parsed_json['current_observation']['temp_f'];
+    //                  $(".class").html("Current temperature in " + location + " is: " + temp_f+"ºF");
+    //          } 
+    //	}); 
+
+  </script>
+</body>
+</html>
